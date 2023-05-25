@@ -1,0 +1,13 @@
+CREATE TABLE requests (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    customer_name VARCHAR(255) NOT NULL,
+    phone_number VARCHAR(255) NOT NULL,
+    unit_number VARCHAR(255),
+    street_number VARCHAR(255) NOT NULL,
+    street_name VARCHAR(255) NOT NULL,
+    suburb VARCHAR(255),
+    destination_suburb VARCHAR(255),
+    pick_up_date DATE NOT NULL,
+    pick_up_time TIME NOT NULL,
+    assignment_status VARCHAR(255) NOT NULL DEFAULT 'pending'
+);

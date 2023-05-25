@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+	<title>Booking Form</title>
+	<script type="text/javascript" src="xhr.js"></script>
+	<script type="text/javascript" src="simpleajax.js"></script>
+</head>
+<body>
+	<h1>Booking Form</h1>
+
+	<form id="bookingForm">
+		<label for="cname">Customer Name:</label>
+		<input type="text" name="cname" required><br>
+
+		<label for="phone">Phone Number:</label>
+		<input type="text" name="phone" pattern="\d{10,12}" required><br>
+
+		<label for="unumber">Unit Number:</label>
+		<input type="text" name="unumber"><br>
+
+		<label for="snumber">Street Number:</label>
+		<input type="text" name="snumber" required><br>
+
+		<label for="stname">Street Name:</label>
+		<input type="text" name="stname" required><br>
+
+		<label for="sbname">Suburb:</label>
+		<input type="text" name="sbname"><br>
+
+		<label for="dsbname">Destination Suburb:</label>
+		<input type="text" name="dsbname"><br>
+
+		<label for="date">Pick-Up Date:</label>
+		<input type="date" name="date" value="<?php echo date('Y-m-d'); ?>" required><br>
+
+		<label for="time">Pick-Up Time:</label>
+		<input type="time" name="time" value="<?php echo date('H:i'); ?>" required><br>
+
+		<input name="submit" type="button" onClick="submitForm('data.php', 'targetDiv', this.form)" value="Submit">
+	</form>
+
+	<div id="targetDiv">
+		<p>The fetched data will go here.</p>
+	</div>
+</body>
+</html>

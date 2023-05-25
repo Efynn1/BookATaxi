@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Booking Search</title>
+</head>
+<body>
+    <h1>Admin Booking Search</h1>
+    <form>
+        <label for="bsearch">Booking Reference Number:</label>
+        <input type="text" name="bsearch" id="bsearch" placeholder="Enter booking reference number">
+        <button type="submit" name="sbutton" onclick="searchBooking()">Search</button>
+    </form>
+    <div id="searchResult"></div>
+
+    <script>
+        function searchBooking() {
+            var searchValue = document.getElementById("bsearch").value;
+
+            // Perform input validation if the search value is not empty
+            if (searchValue.trim() !== '') {
+                // Perform additional validation for the reference number format
+                var referenceNumberPattern = /^BRN\d{5}$/;
+                if (!referenceNumberPattern.test(searchValue)) {
+                    document.getElementById("searchResult").innerHTML = 'Invalid reference number format';
+                    return;
+                }
+            }
+
+            // Perform the search operation here
+            // Replace this section with your own code to handle the search request and display the result
+            var result = "No matching booking records found";
+            document.getElementById("searchResult").innerHTML = result;
+        }
+    </script>
+</body>
+</html>
